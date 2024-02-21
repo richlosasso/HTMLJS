@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Week 6 JS Examples</title>
+    </head>
+    <body>
+        <h1>JS Examples</h1>
+        <button>Change the page</button>
+        <button id = "promptButton">Press this button</button>
+        <!--In doc js ex-->
+        <script>
+            //example of reg string.
+            var name = "Rich"
+            var lastname = "Losasso"
+            //example of string literal
+            var message = `Hello Welcome to the Javascript lesson ${name}`;
+            console.log(message)
+            //alert(message)
+            //example of traditional string
+            var message2 = "Hello" + name + " " + lastname + "Welcome to JS Lesson"
+            console.log(message2)
+
+            var addProblem = 12 + 4
+
+            console.log(addProblem)
+
+            function outputToConsole(data){
+                console.log(data)
+            }
+            
+            //document.getElementByID("header").innerHTML = message2;
+            var myButton = document.querySelector("button")
+            myButton.addEventListener("click", changePage)
+
+            function changePage(){
+                document.querySelector('h1').innerHTML = message
+                document.querySelector('body').style.backgroundColor = "#ff0000"
+            }
+            //var yourName = prompt("Please enter your name.")
+            //document.querySelector("h1").innerHTML = `Hello ${yourName} thanks for entering your name!`;
+
+
+            var dataPromptButton = document.getElementById("promptButton");
+            dataPromptButton.addEventListener('click', dataPrompt)
+            function dataPrompt(){
+                alert(`My name is ${name}`);
+                var yourName = prompt("Please tell me your name");
+                alert(`Hello ${yourName}, Nice to meet you!`);
+
+                var yourLastName = prompt("Please tell me your last name");
+                alert(`Great your full name is ${yourName} ${yourLastName}!`);
+
+                var firstNumber = prompt("Lets add some numbers, enter the first number:")
+                var secondNumber = prompt("Okay now enter the second number:")
+                
+                var result = Number(firstNumber) + Number(secondNumber);
+                alert(`The result is ${result}`);
+
+                var documentBody = document.querySelector('body')
+
+                var outputData = document.createElement('p')
+
+                outputData.innerHTML = `Your name is ${yourName} ${yourLastName}\nThe result of your numbers is ${result}
+                <br>Thanks from ${name} ${lastname}`;
+                documentBody.appendChild(outputData)
+            }
+        </script>
+    </body>
+</html>
