@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Week 6 Lab</title>
+    </head>
+    <body>
+        <h1>Pay Calculator</h1>
+        <script>
+            // Gather user input
+            let hourlyPay = Number(prompt("Enter your hourly pay rate:"));
+            let hoursWorked = Number(prompt("Enter your hours worked per week:"));
+            let taxRate = 0.20;
+
+            // Calculate totals
+            let grossPay = (hourlyPay * hoursWorked * 2).toFixed(2);
+            let uncleSamShare = (grossPay * taxRate).toFixed(2);
+            let netPay = (grossPay - uncleSamShare).toFixed(2);
+
+            // Display results
+            alert(`Gross Pay: $${grossPay}\nUncle Sam's Share: $${uncleSamShare}\nNet Pay: $${netPay}`);
+            console.log(`Gross Pay: $${grossPay}`);
+            console.log(`Uncle Sam's Share: $${uncleSamShare}`);
+            console.log(`Net Pay: $${netPay}`);
+        </script>
+    </body>
+</html>
