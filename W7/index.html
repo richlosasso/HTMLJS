@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--edit the meta tag below to hold YOUR name!-->
-    <meta name="author" content="__YOUR NAME HERE!__">
+    <meta name="author" content="Rich Losasso">
     <meta name="description" content="Week 7 Assignment practicing Javascript & HTML">
     <title>Week 7 | Pay Form Calculator Assignment</title>
 </head>
@@ -76,40 +76,48 @@
         {
             //get each *value* from the form elements (first name, last name, hours worked, hourly rate) and store them into vars
 
-            /*USE THE FOLLOWING VARIABLE NAMES:
-            fname --> first name, #first
-            lname --> last name, #last
-            hours --> hours worked, #hours
-            rate --> hourly rate, #rate */
+            //USE THE FOLLOWING VARIABLE NAMES: 
+            //fname --> first name, #first
+            //lname --> last name, #last
+            //hours --> hours worked, #hours
+            //rate --> hourly rate, #rate 
+
+            var first = document.querySelector(`#first`).value;
+            var last = document.querySelector(`#last`).value;
+            var hours = parseFloat(document.querySelector(`#hours`).value);
+            var rate = parseFloat(document.querySelector(`#rate`).value);
             
 
 
             //console.log() all four values
             
-            console.log(`Gross Pay: $${grossPay}`)
-            console.log()
-            console.log()
-            console.log()
+            console.log(`#first`)
+            console.log(`#last`)
+            console.log(`#hours`)
+            console.log(`#rate`)
 
             //add the first and last name values together and store into a new variable called 'full' holding the user's full name
             var full 
 
             //console.log() the full name value
-            console.log()
+            console.log(`#full`)
 
 
             //convert both hours and rate to Number() data types
-            
+            var hoursNumber = Number(hours);
+            var rateNumber = Number(rate);
 
 
             //NOTE: DO NOT MOVE ON UNTIL YOU ARE ABLE TO DISPLAY THE CORRECT VALUES! This is a practice in testing as you build! 
 
             //create gross, taxAmount, net variables and store corresponding data to them
             //use a tax percentage of 20% (.2)
-            
+            var gross = hours * rate;
+            var taxAmount = gross * .2
+            var net = gross - taxAmount
 
             //console.log() all three processed values, rounded to the second decimal place
-            console.log(.toFixed(2))
+            console.log(toFixed(2))
 
 
             //create a new variable called 'finalMessage' that holds the literal string value of the following, each value on a new line (use <br>): full name, hours worked*, hourly rate*   *--> rounded to the second decimal place 
